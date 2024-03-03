@@ -35,6 +35,22 @@ public class RegistrationPage {
     @FindBy(className = "field-validation-error")
     private WebElement fieldValidationError;
 
+    @FindBy(className = "ico-login")
+    private WebElement loginPageLink;
+
+
+        public void registrate(User user) {
+            chooseGenderMale();
+            enterFirstName(user.getFirstName());
+            enterLastName(user.getLastName());
+            enterEmail(user.getEmail());
+            enterPassword(user.getPassword());
+            enterConfirmPassword(user.getConfirmPassword());
+            clickRegisterButton();
+        }
+
+
+
     public void chooseGenderMale() {
        genderMale.click();
     }
@@ -65,5 +81,9 @@ public class RegistrationPage {
 
     public String getError() {
         return fieldValidationError.getText();
+    }
+
+    public void clickOnLogin() {
+        loginPageLink.click();
     }
 }

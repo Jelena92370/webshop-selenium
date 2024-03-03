@@ -15,7 +15,14 @@ public class ConfirmationPage {
     @FindBy(className = "result")
     private WebElement confirmationResult;
 
+    @FindBy(className = "ico-logout")
+    private WebElement logoutLink;
+
     public String getConfirmationResult() {
         return confirmationResult.getText();
+    }
+
+    public void clickOnLogoutLink() {
+        logoutLink.click();
     }
 }
